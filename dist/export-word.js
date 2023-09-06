@@ -850,7 +850,8 @@ var exportWord = (function (saveAs, html2canvas) {
     var fileContent = static_word.mhtml.top.replace('_html_', static_word.mhtml.head.replace('_styles_', styles) + static_word.mhtml.body.replace('_body_', wrap.innerHTML)) + mhtmlBottom; // Create a Blob with the file contents
 
     var blob = new Blob([fileContent], {
-      type: 'application/msword;charset=utf-8'
+      type: 'application/msword;charset=utf-8' // application/msword;charset=utf-8
+
     });
     return blob;
   };
@@ -866,8 +867,9 @@ var exportWord = (function (saveAs, html2canvas) {
       _classCallCheck(this, App);
 
       var defaultConfig = {
+        document: document,
         addStyle: true,
-        fileName: new Date().toLocaleString(),
+        fileName: '',
         maxWidth: 624,
         toImg: '',
         success: function success() {}
@@ -966,7 +968,7 @@ var exportWord = (function (saveAs, html2canvas) {
                 case 0:
                   str = this.config.toImg;
 
-                  if (!(str === '')) {
+                  if (str.length) {
                     _context3.next = 3;
                     break;
                   }
@@ -1017,13 +1019,18 @@ var exportWord = (function (saveAs, html2canvas) {
     }, {
       key: "exportWord",
       value: function exportWord() {
-        saveAs__default["default"](wordexport(this.c_dom), this.config.fileName + '.doc');
-        this.config.success();
+        var wordBlob = wordexport(this.c_dom);
+
+        if (this.config.fileName) {
+          saveAs__default["default"](wordBlob, this.config.fileName + '.doc');
+        }
+
+        this.config.success(wordBlob);
       }
     }, {
       key: "sheetToSelf",
       value: function sheetToSelf(dom) {
-        var sheets = document.styleSheets;
+        var sheets = this.config.document.styleSheets;
         var $dom = dom;
 
         function cssTextToJSON(cssText) {

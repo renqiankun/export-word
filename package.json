@@ -1,10 +1,10 @@
 {
-  "name": "js-export-word",
-  "version": "1.0.5",
+  "name": "html-doc-js",
+  "version": "1.0.7",
   "description": "js-export-word",
   "repository": {
     "type": "git",
-    "url": "https://github.com/huangbohang/export-word"
+    "url": "https://github.com/renqiankun/export-word"
   },
   "keywords": [
     "export-word",
@@ -14,7 +14,7 @@
     "web-components",
     "vue export word"
   ],
-  "main": "src/main.js",
+  "main": "./dist/export-word.min.js",
   "scripts": {
     "build": "rollup --config"
   },

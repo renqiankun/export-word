@@ -5,8 +5,9 @@ import wordexport from './wordexport'
 class App {
   constructor(wordDom, _config = {}) {
     const defaultConfig = {
+      document: document,
       addStyle: true,
-      fileName: new Date().toLocaleString(),
+      fileName: '',
       maxWidth: 624,
       toImg: '',
       success() {}
@@ -50,11 +51,14 @@ class App {
     }
   }
   exportWord() {
-    saveAs(wordexport(this.c_dom), this.config.fileName + '.doc')
-    this.config.success()
+    const wordBlob = wordexport(this.c_dom)
+    if (this.config.fileName) {
+      saveAs(wordBlob, this.config.fileName + '.doc')
+    }
+    this.config.success(wordBlob)
   }
   sheetToSelf(dom) {
-    const sheets = document.styleSheets
+    const sheets = this.config.document.styleSheets
     const $dom = dom
 
     function cssTextToJSON(cssText) {

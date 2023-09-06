@@ -27,6 +27,9 @@
             left: 0;
             top: 20px;
         }
+        tr,td{
+            border: solid 1px #000;
+        }
     </style>
 </head>
 <body>
@@ -61,7 +64,7 @@
             <img src="./chelizi.jpg" alt="..." class="img-circle">
             <img src="./chelizi.jpg" alt="..." class="img-thumbnail">
             <h1>table</h1>
-            <div class="need-to-img">
+            <div >
                 <table class="table " >
                     <tr>
                         <th>日期</th>
@@ -124,7 +127,10 @@
         
            exportWord(wrap,{
               fileName:'测试文件',
-              toImg:['.need-to-img','.bg-danger']
+              toImg:['.need-to-img','.bg-danger'],
+              success(blob){
+                console.log(blob)
+              }
           })
       }
         

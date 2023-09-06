@@ -48,7 +48,7 @@ const wordexport = function(wrap) {
           ) + mhtmlBottom
   // Create a Blob with the file contents
   const blob = new Blob([fileContent], {
-    type: 'application/msword;charset=utf-8'
+    type: 'application/msword;charset=utf-8' // application/msword;charset=utf-8
   })
   return blob
 }
