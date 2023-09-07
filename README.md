@@ -1,5 +1,5 @@
 # js-export-word 
-一个html导出为word的js库   
+一个html导出为word的js库   fork：https://github.com/huangbohang/export-word
 
 ## [example](https://huangbohang.github.io/export-word/examples)
 
