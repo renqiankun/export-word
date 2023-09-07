@@ -2,7 +2,7 @@
 一个html导出为word的js库   fork：https://github.com/huangbohang/export-word
 已支持同源iframe内部dom导出、仅获取blob。
 
-## [example](https://huangbohang.github.io/export-word/examples)
+## [example](https://renqiankun.github.io/export-word/examples/index.html)
 
 ## Install  
     npm install  html-doc-js
