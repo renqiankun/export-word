@@ -1,5 +1,6 @@
 # js-export-word 
 一个html导出为word的js库   fork：https://github.com/huangbohang/export-word
+已支持同源iframe内部dom导出、仅获取blob。
 
 ## [example](https://huangbohang.github.io/export-word/examples)
 
