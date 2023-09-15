@@ -1025,7 +1025,7 @@ var exportWord = (function (saveAs, html2canvas) {
           saveAs__default["default"](wordBlob, this.config.fileName + '.doc');
         }
 
-        this.config.success(wordBlob);
+        this.config.success(wordBlob, this.c_dom);
       }
     }, {
       key: "sheetToSelf",

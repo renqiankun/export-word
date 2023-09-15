@@ -55,7 +55,7 @@ class App {
     if (this.config.fileName) {
       saveAs(wordBlob, this.config.fileName + '.doc')
     }
-    this.config.success(wordBlob)
+    this.config.success(wordBlob, this.c_dom)
   }
   sheetToSelf(dom) {
     const sheets = this.config.document.styleSheets
